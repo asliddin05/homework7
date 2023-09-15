@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color:rgb(166, 186, 222)
+}
+
+.accordion {
+    width: 800px;
+}
+
+.content-box {
+    position: relative;
+    margin: 10px 20px;
+}
+
+.label {
+    position: relative;
+    padding: 10px;
+    background-color:rgb(61, 108, 194);
+    color: #fff;
+    cursor: pointer;
+}
+
+.label:before {
+    content: '+';
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 1.5em;
+}
+.content-box.active .label:before {
+    content: '-';
+}
+.content {
+    position: relative;
+    background-color: #fff;
+    height: 0;
+    overflow-y: auto;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.content-box.active .content {
+    height: 150px; 
+    padding: 10px;
+}
